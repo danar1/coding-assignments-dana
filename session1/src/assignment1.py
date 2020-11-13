@@ -1,8 +1,18 @@
 def convert_number_lists_to_text(list1, list2):
-    # TODO: Your implementation needs to be here including the return value
-    #       Feel free to extract code and functions outside of this function
-    #       For this specific assignment, there is no need to import/install ANY library
-    return "Bla bla blaaaaaaa. please implement a concatenation of the converted values in the given list1 & list2"
+    """
+    This function get two lists that contain numbers
+    Converts each number into its ascii representation
+    and joins the strings based on their matching index
+    return: joined string
+    * note -
+      Using builtins (avoid explicit usage of 'for' loop)
+    """
+    list1_chr = map(chr, list1)
+    list2_chr = map(chr, list2)
+    tuple_pairs = zip(list1_chr, list2_chr)
+    tuple_pairs_sum = sum(tuple_pairs, ())
+    res = ''.join(tuple_pairs_sum)
+    return res
 
 
 if __name__ == '__main__':
