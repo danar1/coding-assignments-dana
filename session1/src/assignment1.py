@@ -4,6 +4,8 @@ def convert_number_lists_to_text(list1, list2):
     Converts each number into its ascii representation
     and joins the strings based on their matching index
     return: joined string
+    * note -
+      Using builtins (avoid explicit usage of 'for' loop)
     """
     list1_chr = map(chr, list1)
     list2_chr = map(chr, list2)
