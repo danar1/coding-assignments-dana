@@ -1,7 +1,20 @@
 def is_won_loto(list_of_tuples, loto_number):
-    # TODO: Your implementation needs to be here including the return value
-    #       Feel free to extract code and functions outside of this function
-    #       For this specific assignment, there is no need to import/install ANY library
+    """
+    This function get list of tuples and a loto number
+    Return True if:
+    - The max number in ALL tuples is equal to the given loto_number, Or
+    - The sum of the first 2 numbers in ALL the tuples is equal to the given loto_number, Or
+    - The next to last number in ALL the tuples is equal to the given loto_number, Or
+    Otherwise return False
+    * notes -
+      Using builtins (avoid explicit usage of 'for' loop)
+      Assuming len(list_of_tuples) >= 2
+    """
+    is_max_equal_loto_num = all(map(lambda _tuple: max(_tuple) == loto_number, list_of_tuples))
+    is_sum_first_two_equal_loto_num = all(map(lambda _tuple: sum(_tuple[:2]) == loto_number, list_of_tuples))
+    is_next_last_num_equal_loto_num = all(map(lambda _tuple: _tuple[-2] == loto_number, list_of_tuples))
+    if is_max_equal_loto_num or is_sum_first_two_equal_loto_num or is_next_last_num_equal_loto_num:
+        return True
     return False
 
 
